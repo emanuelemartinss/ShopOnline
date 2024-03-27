@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
  const [products, setProducts] = useState([])
@@ -17,9 +18,11 @@ export default function Home() {
  }
 
   return (
-    <main className="flex min-h-screen max-w-screen flex-wrap gap-6 items-center justify-center p-24">
+    <main className="flex min-h-screen max-w-screen flex-wrap gap-6 
+    items-center justify-center p-24">
       {products.map((p) => {
-        return (<div key={p.id}>
+        return (<div key={p.id} className="border rounded-md ">
+          <Image src={p.image} width={200} height={200} alt={p.title} />
           <div>
             {p.title}
           </div>
