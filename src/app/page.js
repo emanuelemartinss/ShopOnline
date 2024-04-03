@@ -8,7 +8,7 @@ export default function Home() {
  const [cart, setCart] = useState([])
 
  useEffect(() => {
-  getDados()
+    getDados()
  },[])
 
  async function getDados(){
@@ -21,6 +21,8 @@ export default function Home() {
 
  function addToCart(product){
   setCart([...cart, product])
+
+  window.localStorage.setItem("cart", JSON.stringify([cart, product]))
  }
 
   return (
